@@ -16,6 +16,7 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "echarts": ["node_modules/echarts/dist/echarts.min.js"]
     }
   },
   "exclude": [

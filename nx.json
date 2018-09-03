@@ -7,5 +7,18 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "svg-svg": {
+      "tags": []
+    },
+    "svg-svg-e2e": {
+      "tags": []
+    },
+    "echarts-echarts": {
+      "tags": []
+    },
+    "echarts-echarts-e2e": {
+      "tags": []
+    }
+  }
 }

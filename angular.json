@@ -2,13 +2,260 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "svg-svg": {
+      "root": "apps/svg/svg/",
+      "sourceRoot": "apps/svg/svg/src",
+      "projectType": "application",
+      "prefix": "gs",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineStyle": true
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/svg/svg",
+            "index": "apps/svg/svg/src/index.html",
+            "main": "apps/svg/svg/src/main.ts",
+            "polyfills": "apps/svg/svg/src/polyfills.ts",
+            "tsConfig": "apps/svg/svg/tsconfig.app.json",
+            "assets": [
+              "apps/svg/svg/src/favicon.ico",
+              "apps/svg/svg/src/assets"
+            ],
+            "styles": [
+              "apps/svg/svg/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/svg/svg/src/environments/environment.ts",
+                  "with": "apps/svg/svg/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "svg-svg:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "svg-svg:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "svg-svg:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/svg/svg/src/test.ts",
+            "polyfills": "apps/svg/svg/src/polyfills.ts",
+            "tsConfig": "apps/svg/svg/tsconfig.spec.json",
+            "karmaConfig": "apps/svg/svg/karma.conf.js",
+            "styles": [
+              "apps/svg/svg/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/svg/svg/src/favicon.ico",
+              "apps/svg/svg/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/svg/svg/tsconfig.app.json",
+              "apps/svg/svg/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "svg-svg-e2e": {
+      "root": "apps/svg/svg-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/svg/svg-e2e/protractor.conf.js",
+            "devServerTarget": "svg-svg:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "svg-svg:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/svg/svg-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "echarts-echarts": {
+      "root": "apps/echarts/echarts/",
+      "sourceRoot": "apps/echarts/echarts/src",
+      "projectType": "application",
+      "prefix": "gs",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineStyle": true
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/echarts/echarts",
+            "index": "apps/echarts/echarts/src/index.html",
+            "main": "apps/echarts/echarts/src/main.ts",
+            "polyfills": "apps/echarts/echarts/src/polyfills.ts",
+            "tsConfig": "apps/echarts/echarts/tsconfig.app.json",
+            "assets": [
+              "apps/echarts/echarts/src/favicon.ico",
+              "apps/echarts/echarts/src/assets"
+            ],
+            "styles": [
+              "apps/echarts/echarts/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/echarts/echarts/src/environments/environment.ts",
+                  "with": "apps/echarts/echarts/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "echarts-echarts:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "echarts-echarts:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "echarts-echarts:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/echarts/echarts/src/test.ts",
+            "polyfills": "apps/echarts/echarts/src/polyfills.ts",
+            "tsConfig": "apps/echarts/echarts/tsconfig.spec.json",
+            "karmaConfig": "apps/echarts/echarts/karma.conf.js",
+            "styles": [
+              "apps/echarts/echarts/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/echarts/echarts/src/favicon.ico",
+              "apps/echarts/echarts/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/echarts/echarts/tsconfig.app.json",
+              "apps/echarts/echarts/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "echarts-echarts-e2e": {
+      "root": "apps/echarts/echarts-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/echarts/echarts-e2e/protractor.conf.js",
+            "devServerTarget": "echarts-echarts:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "echarts-echarts:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/echarts/echarts-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
       "versionMismatch": false
     },
     "defaultCollection": "@nrwl/schematics"
-    
-  }
+  },
+  "defaultProject": "svg-svg"
 }
