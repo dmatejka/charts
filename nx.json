@@ -19,6 +19,12 @@
     },
     "echarts-echarts-e2e": {
       "tags": []
+    },
+    "d3-d3": {
+      "tags": []
+    },
+    "d3-d3-e2e": {
+      "tags": []
     }
   }
 }
