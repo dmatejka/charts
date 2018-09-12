@@ -1,0 +1,18 @@
+<svg:svg
+        class="gs-chart-donut"
+        [attr.width]="view[0]"
+        [attr.height]="view[1]">
+<svg:g class="gs-chart-donut-group" *ngFor="let arc of data; trackBy:trackBy">
+  <svg:g
+    gs-charts-pie-arc
+    [startAngle]="arc.startAngle"
+    [endAngle]="arc.endAngle"
+    [innerRadius]="innerRadius"
+    [outerRadius]="outerRadius"
+    [value]="arc.value"
+    [data]="arc.data"
+    [color]="arc.data.color"
+  >
+  </svg:g>
+</svg:g>
+</svg:svg>

@@ -25,6 +25,12 @@
     },
     "d3-d3-e2e": {
       "tags": []
+    },
+    "a-d3-angular-d3": {
+      "tags": []
+    },
+    "a-d3-angular-d3-e2e": {
+      "tags": []
     }
   }
 }
